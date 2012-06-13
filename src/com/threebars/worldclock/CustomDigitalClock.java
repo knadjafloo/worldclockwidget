@@ -117,6 +117,10 @@ public class CustomDigitalClock extends TextView {
             mFormat = m12;
         }
     }
+    
+    public void setFormat(String format) {
+    	mFormat = format;
+    }
 
     private class FormatChangeObserver extends ContentObserver {
         public FormatChangeObserver() {
