@@ -36,10 +36,5 @@
 			<type>2</type>
 			<location>F:/eclipse/plugins/com.android.ide.eclipse.source_16.0.0.201112171909/7</location>
 		</link>
-		<link>
-			<name>workspace</name>
-			<type>2</type>
-			<location>G:/downloads</location>
-		</link>
 	</linkedResources>
 </projectDescription>

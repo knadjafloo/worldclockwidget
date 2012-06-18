@@ -24,8 +24,14 @@ public class TimeZoneParser {
 
 	private Context context;
 
+	private List<CityTimeZone> cityTimeZoneList = new ArrayList<CityTimeZone>();
+
 	public TimeZoneParser(Context context) {
 		this.context = context;
+	}
+	
+	public List<CityTimeZone> getAllCities() {
+		return this.cityTimeZoneList ;
 	}
 
 	public void parseFile() {
@@ -37,7 +43,7 @@ public class TimeZoneParser {
 
 			br = new BufferedReader(new InputStreamReader(is));
 
-			
+			int counter = 0;
 			String line = null;
 			while ((line = br.readLine()) != null) {
 
@@ -66,8 +72,10 @@ public class TimeZoneParser {
 				cityTimeZone.latitude = Double.parseDouble(tokens[3]);
 				cityTimeZone.longitude = Double.parseDouble(tokens[4]);
 				cityTimeZone.timezoneName = tokens[5];
-				
-				System.out.println(cityTimeZone.toString());
+				if(counter < 100)
+					cityTimeZoneList.add(cityTimeZone);
+				counter++;
+//				System.out.println(cityTimeZone.toString());
 
 			}
 		} catch (FileNotFoundException fnf) {

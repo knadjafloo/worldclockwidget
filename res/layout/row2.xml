@@ -54,6 +54,14 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/topPart"
             android:text="USA"/>
+         <TextView
+            android:id="@+id/gmt" 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_below="@id/topPart"
+            android:layout_toRightOf="@id/country"
+            android:text="+ 4 gmt"/>
     </RelativeLayout>
 
 </RelativeLayout>
