@@ -68,7 +68,9 @@ public class TimeZoneParser {
 				
 				cityTimeZone.city = tokens[0];
 				cityTimeZone.country = tokens[2];
-				cityTimeZone.timezone = tokens[1].substring(2, 11);
+				int startBracketIndex = tokens[1].indexOf("(");
+				int closeBracketIndex = tokens[1].indexOf(")");
+				cityTimeZone.timezone = tokens[1].substring(startBracketIndex, closeBracketIndex);
 				cityTimeZone.latitude = Double.parseDouble(tokens[3]);
 				cityTimeZone.longitude = Double.parseDouble(tokens[4]);
 				cityTimeZone.timezoneName = tokens[5];

@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -62,10 +65,26 @@ public class WorldClockWidgetActivity extends SherlockListActivity {
 		MenuInflater inflater = getSherlock().getMenuInflater();
 		inflater.inflate(R.menu.main_menu, menu);
 		
-		SearchView searchView = (SearchView) menu.findItem(R.id.menu_search).getActionView();
-	    // Configure the search info and add any event listeners
+	    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+	        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+	        SearchView searchView = (SearchView) menu.findItem(R.id.menu_search).getActionView();
+		    // Configure the search info and add any event listeners
+	        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+	        searchView.setIconifiedByDefault(false);
+	    }
+	    return true;
 		
-		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	        case R.id.menu_search:
+	            onSearchRequested();
+	            return true;
+	        default:
+	            return false;
+	    }
 	}
 	
     /** Called when the activity is first created. */

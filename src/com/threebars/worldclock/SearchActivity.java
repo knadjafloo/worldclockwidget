@@ -18,11 +18,11 @@ public class SearchActivity extends SherlockListActivity {
 	    Intent intent = getIntent();
 	    if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
 	      String query = intent.getStringExtra(SearchManager.QUERY);
-	      doMySearch(query);
+	      searchCities(query);
 	    }
 	}
 
-	private void doMySearch(String query) {
+	private void searchCities(String query) {
 		// TODO Auto-generated method stub
 		
 	}

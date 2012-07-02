@@ -8,9 +8,10 @@ public class CityTimeZone {
 	public double latitude;
 	public String timezone;
 	public String timezoneName;
+	public String preferredName;
 
 	@Override
 	public String toString() {
-		return city + ", " + country + ", " + latitude + ", " + longitude + ", " + timezone + ", " + timezoneName;
+		return city + ", " + country + ", " + latitude + ", " + longitude + ", " + timezone + ", " + timezoneName + ", " + preferredName;
 	}
 }
