@@ -30,11 +30,4 @@
 		<nature>com.android.ide.eclipse.adt.AndroidNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>com.android.ide.eclipse.source_16.0.0.201112171909</name>
-			<type>2</type>
-			<location>F:/eclipse/plugins/com.android.ide.eclipse.source_16.0.0.201112171909/7</location>
-		</link>
-	</linkedResources>
 </projectDescription>
